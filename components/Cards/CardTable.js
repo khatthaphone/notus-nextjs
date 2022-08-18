@@ -10,7 +10,7 @@ export default function CardTable({ color }) {
     <>
       <div
         className={
-          "relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded " +
+          "relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg " +
           (color === "light" ? "bg-white" : "bg-blueGray-700 text-white")
         }
       >
@@ -144,7 +144,7 @@ export default function CardTable({ color }) {
                   <div className="flex items-center">
                     <span className="mr-2">60%</span>
                     <div className="relative w-full">
-                      <div className="overflow-hidden h-2 text-xs flex rounded bg-red-200">
+                      <div className="overflow-hidden h-2 text-xs flex rounded-lg bg-red-200">
                         <div
                           style={{ width: "60%" }}
                           className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-red-500"
@@ -208,7 +208,7 @@ export default function CardTable({ color }) {
                   <div className="flex items-center">
                     <span className="mr-2">100%</span>
                     <div className="relative w-full">
-                      <div className="overflow-hidden h-2 text-xs flex rounded bg-emerald-200">
+                      <div className="overflow-hidden h-2 text-xs flex rounded-lg bg-emerald-200">
                         <div
                           style={{ width: "100%" }}
                           className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-emerald-500"
@@ -271,7 +271,7 @@ export default function CardTable({ color }) {
                   <div className="flex items-center">
                     <span className="mr-2">73%</span>
                     <div className="relative w-full">
-                      <div className="overflow-hidden h-2 text-xs flex rounded bg-red-200">
+                      <div className="overflow-hidden h-2 text-xs flex rounded-lg bg-red-200">
                         <div
                           style={{ width: "73%" }}
                           className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-red-500"
@@ -335,7 +335,7 @@ export default function CardTable({ color }) {
                   <div className="flex items-center">
                     <span className="mr-2">90%</span>
                     <div className="relative w-full">
-                      <div className="overflow-hidden h-2 text-xs flex rounded bg-teal-200">
+                      <div className="overflow-hidden h-2 text-xs flex rounded-lg bg-teal-200">
                         <div
                           style={{ width: "90%" }}
                           className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-teal-500"
@@ -399,7 +399,7 @@ export default function CardTable({ color }) {
                   <div className="flex items-center">
                     <span className="mr-2">100%</span>
                     <div className="relative w-full">
-                      <div className="overflow-hidden h-2 text-xs flex rounded bg-emerald-200">
+                      <div className="overflow-hidden h-2 text-xs flex rounded-lg bg-emerald-200">
                         <div
                           style={{ width: "100%" }}
                           className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-emerald-500"

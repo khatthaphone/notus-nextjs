@@ -1521,7 +1521,7 @@ select {
   border-color: rgba(113, 113, 122, var(--tw-border-opacity));
 }
 
-.rounded {
+.rounded-lg {
   border-radius: 0.25rem;
 }
 
