@@ -47,9 +47,10 @@ function useProvideAuth() {
     }
 
     useEffect(() => {
+        getUser()
         const interval = setInterval(() => {
             getUser()
-        }, 360000)
+        }, 300000)
         return () => clearInterval(interval)
     }, [])
 

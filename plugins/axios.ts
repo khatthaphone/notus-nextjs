@@ -6,7 +6,7 @@ const instance = axios.create({
 
 instance.interceptors.request.use((config) => {
 
-    const token = localStorage.getItem('token')
+    const token = localStorage.getItem(`${process.env.NEXT_PUBLIC_APP_NAME}-token`)
 
     if (token) {
         config.headers = {
