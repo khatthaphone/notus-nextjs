@@ -5,6 +5,7 @@ import Head from "next/head";
 import Router from "next/router";
 import { AuthProvider } from '@hooks/auth'
 import PageChange from "components/PageChange/PageChange.js";
+import { SessionProvider } from "next-auth/react"
 
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "styles/tailwind.css";
@@ -59,25 +60,27 @@ export default class MyApp extends App {
     return { pageProps };
   }
   render() {
-    const { Component, pageProps } = this.props;
+    const { Component, pageProps: {session, ...pageProps} } = this.props;
 
     const Layout = Component.layout || (({ children }) => <>{children}</>);
 
     return (
       <React.Fragment>
-        <AuthProvider>
-          <Head>
-            <meta
-              name="viewport"
-              content="width=device-width, initial-scale=1, shrink-to-fit=no"
-            />
-            <title>Notus NextJS by Creative Tim</title>
-            <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
-          </Head>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-        </AuthProvider>
+        <SessionProvider session={session}>
+          <AuthProvider>
+            <Head>
+              <meta
+                name="viewport"
+                content="width=device-width, initial-scale=1, shrink-to-fit=no"
+              />
+              <title>Notus NextJS by Creative Tim</title>
+              <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+            </Head>
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+          </AuthProvider>
+        </SessionProvider>
       </React.Fragment>
     );
   }

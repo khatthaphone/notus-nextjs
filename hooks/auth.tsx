@@ -1,5 +1,6 @@
-import React, { useState, useContext, createContext } from 'react'
+import React, { useState, useContext, createContext, useEffect } from 'react'
 import axios from "@plugins/axios"
+import { serialize } from 'cookie';
 
 const authContext = createContext(null);
 
@@ -22,8 +23,9 @@ function useProvideAuth() {
         const res = await axios.post('/login', {})
 
         if (res.status === 200) {
-            console.log(res.data)
-            localStorage.setItem('token', res.data['token'])
+            const token = res.data['token']
+            localStorage.setItem('token', token)
+
             getUser(res.data['token'])
         }
     }
@@ -43,6 +45,13 @@ function useProvideAuth() {
             setUser(res.data)
         }
     }
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            getUser()
+        }, 360000)
+        return () => clearInterval(interval)
+    }, [])
 
     return [user, signIn, signOut, getUser]
 }
